@@ -1,0 +1,195 @@
+*********************************************************************************************************************************************************************************
+"""
+Faça um programa que mostre na tela uma contagem regressiva para o estouro de fogos de artifício, indo de 10 até 0,
+com uma pausa de 1 segundo entres eles.
+"""
+import time
+contagem = 10
+while contagem > 1:
+    print(contagem)
+    time.sleep(1)
+    contagem = contagem - 1
+print('\033[35mAno Novo!!!')
+
+import time
+contagem = 0
+for contagem in range(1, 11):
+    print(contagem)
+    time.sleep(1)
+    contagem = contagem - 1
+print('\033[35mAno Novo!!!')
+*********************************************************************************************************************************************************************************
+"""
+Crie uma programa que mostre na tela todos os números pares que estão no intervalo entre 1 a 50.
+"""
+for numero in range(0, 50, 2):
+    print(numero)
+
+"""
+Faça um programa que calcule a soma entre todos os número ímpares que são múltiplos de três e que se encontram
+no intervalo de 1 até 500
+"""
+soma = 0
+contado = 0
+for n in range(1, 501, 2):
+    if n % 3 == 0:
+        soma = soma + n
+        contado = contado + 1
+print(f'A soma de todos os valores é {soma} e a quantidade é {contado}')
+*********************************************************************************************************************************************************************************
+"""
+Refaça o desafio 009, mostrando a tabuada de um número que o usuário escolher, só que agora utilizando um laço for
+"""
+soma = 0
+n = 0
+numero = int(input('Qual tabuada deseja vê?\n'))
+for n in range(0, 11):
+    soma = n * numero
+    print(f'{numero} x {n} = {soma}')
+*********************************************************************************************************************************************************************************
+"""
+Desenvolva um programa que leia seis números inteiros e mostre a soma apenas daqueles que forem pares. 
+Se o valor digitado for ímpar, Desconsidere-o
+"""
+soma = 0
+contador = 0
+for n in range(0, 6):
+    num = int(input("Digite um valor: \n"))
+    if num % 2 == 0:
+        soma = soma + num
+        contador = contador + 1
+print(f'Os valores par digitados foi {contador} e a soma dele é {soma}')
+*********************************************************************************************************************************************************************************
+"""
+Desenvolva um programa que leia o primeiro termo e a razão de um PA. No final mostre os 10
+primeiros termos dessa progessão
+"""
+termo = int(input('Qual é o Termo?'))
+razao = int(input('Qual é a Razão?'))
+decimo = termo + (10 - 1) * razao
+for c in range(termo, decimo + razao, razao):
+    print(f'{c}', end=" -> ")
+print('Acabo')
+*********************************************************************************************************************************************************************************
+"""
+Faça um programa que leia um número inteiro e diga se ele é ou não m número primo.
+"""
+numero_primo = int(input('Digite um numero: \n'))
+tot = 0
+for c in range(1, numero_primo + 1):
+    if numero_primo % c == 0:
+        print('\033[33m', end=" ")
+        tot += 1
+    else:
+        print('\033[31m', end=" ")
+    print(f'{c}', end=" ")
+print(f'\n\033[m O numero {numero_primo} foi divisível {tot} vezes')
+if tot == 2:
+    print('E por isso ele é Primo')
+else:
+    print('Por isso ele não é primo')
+*********************************************************************************************************************************************************************************
+"""
+Crie um programa que leia uma frase qualquer e diga se ela é um palíndromo,
+desconsiderando os espaços
+"""
+
+frase = input('Digite uma frase: ').split(" ")  # Retirando espaço em branco
+aux = ""
+for c in range(0, len(frase)):
+    aux += frase[c]
+frase = aux.split('.')  # Retirando os pontos
+aux = ""
+
+for c in range(0, len(frase)):  # Retirando os pontos
+    aux += frase[c]
+
+frase = aux.split(',')  # Retirando as vírgulas
+aux = ""
+
+for c in range(0, len(frase)):  # Retirando as vírgulas
+    aux += frase[c]
+
+frase = aux.split(';')  # retirando os dois pontos
+aux = ""
+
+for c in range(0, len(frase)):
+    aux += frase[c]
+
+if aux.lower() == aux.lower()[::-1]:  # Verifica usando minúsculo e invertido
+    print('É palíndromo')
+else:
+    print('Não é um palíndromo')
+*********************************************************************************************************************************************************************************
+"""
+Crie um programa que leia o ano de nascimento de sete pessoas. No final, mostre
+quantas pessoas ainda não atingira a maioridade e quantas já são maiores
+"""
+tot = 1
+for c in range(0, 7):
+    nascimento = int(input(f'Digite o nascimento da {tot} pessoas: \n'))  # Fazendo um laço para ler
+    tot += 1
+    idade = 2021 - nascimento
+    if idade > 21:
+        print('Você é maior de idade')
+    else:
+        print('Você é menor de idade')
+*********************************************************************************************************************************************************************************
+"""
+Crie um programa que leia o ano de nascimento de sete pessoas. No final, mostre
+quantas pessoas ainda não atingira a maioridade e quantas já são maiores
+"""
+tot = 1
+for c in range(0, 7):
+    nascimento = int(input(f'Digite o nascimento da {tot} pessoas: \n'))  # Fazendo um laço para ler
+    tot += 1
+    idade = 2021 - nascimento
+    if idade > 18:
+        print('Você é maior de idade')
+    else:
+        print('Você é menor de idade'
+*********************************************************************************************************************************************************************************
+"""
+Faça um programa que leia o peso de cinco pessoas. No final, mostre qual foi o maior e o menor peso lidos.
+"""
+lista = []
+tot = 1
+for c in range(0, 5):
+    peso = float(input(f'Digite o peso da {tot} pessoa:\n'))
+    tot += 1
+    lista += [peso]  # Adicionando o peso na lista
+lista.sort()  # Ordenar a lista
+print(f'O maior pesos foi {lista[4]} Kg e o menor pesos foi de {lista[0]}')
+*********************************************************************************************************************************************************************************
+"""
+Desenvolva um programa que leia o nome. idade e sexo de 4 pessoas. No final do programa , mostre:
+A média de idade do grupo
+Qual é o nome do homem mais velho.
+Quantas mulheres têm menos de 20 anos
+"""
+tot = 1
+soma_idade = 0
+mediaidade = 0
+maioridadehomem = 0
+nomevelho = ''
+totmulher20 = 0
+for c in range(0, 4):
+    print(f'-=-=-=-=-=-=-= {tot} PESSOA -=-=-=-=-=-=-=')
+    nome = str(input("Nome: ")).strip()
+    idade = int(input('Idade:  '))
+    sexo = str(input('Sexo [M/F]: ')).strip()
+    tot += 1
+    soma_idade += idade
+    if c == 1 and sexo in 'Mm':
+        maioridadehomem = idade
+        nomevelho = nome
+    if sexo in 'Mm' and idade > maioridadehomem:
+        maioridadehomem = idade
+        nomevelho = nome
+    if sexo in 'Ff' and idade > 20:
+        totmulher20 += 1
+mediaidade = soma_idade / 4
+print(f'A média de idade do grupo é {mediaidade}')
+print(f'O homem mais velho tem {maioridadehomem} anos se chama {nomevelho}')
+print(f'Ao todo são {totmulher20} mulheres com menos de 20 anos')
+*********************************************************************************************************************************************************************************
