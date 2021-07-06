@@ -1,4 +1,4 @@
-*********************************************************************************************************************************************************************************
+Desafio 57 **********************************************************************************************************************************************************************
 """
 Faça um programa que leia o sexo de uma pessoa, mas só aceite os valores 'M' ou 'F'.
 Caso esteja errado, peça a digitação novamente até ter um valor correto.
@@ -8,4 +8,18 @@ while n != 'M' and n != 'F':
     n = str(input('Digite o seu Sexo: [M/F] ')).upper()
     if n != 'M' and n != 'F':
         print('Tente novamente')
-*********************************************************************************************************************************************************************************
+Desafio 58 **********************************************************************************************************************************************************************
+"""
+Melhore o jogo do desafio 28 onde o computador vai 'pensa' em um número entre 0 e 10. Só que agora
+o jogador vai tentar adivinhar até acertar, mostrando no final quantos palpites foram necessários para vencer.
+"""
+import random
+n1 = 0
+lista = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+sorteio = random.choice(lista)
+
+while n1 != sorteio:
+    n1 = int(input('Qual numero eu estou pensando entre 0 a 10 ?\n'))
+    if n1 == sorteio:
+        print('Você acerto')
+Desafio 59 **********************************************************************************************************************************************************************
